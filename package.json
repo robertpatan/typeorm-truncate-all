@@ -1,6 +1,6 @@
 {
   "name": "typeorm-truncate-all",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "It simplifies the process of resetting the database to a clean state during testing or development by executing a PostgreSQL query to truncate all tables with cascade.",
   "main": "./dist/index.js",
   "types": "./dist/types.d.ts",
