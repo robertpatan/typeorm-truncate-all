@@ -1,0 +1,1 @@
+export { truncateAllTables } from "./truncate";

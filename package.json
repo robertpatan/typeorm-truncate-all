@@ -1,0 +1,33 @@
+{
+  "name": "typeorm-truncate-all",
+  "version": "1.0.0",
+  "description": "It simplifies the process of resetting the database to a clean state during testing or development by executing a PostgreSQL query to truncate all tables with cascade.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertpatan/typeorm-truncate-all.git"
+  },
+  "keywords": [
+    "typeorm",
+    "nestjs",
+    "typescript",
+    "truncate",
+    "javascript"
+  ],
+  "author": "Robert Pațan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robertpatan/typeorm-truncate-all/issues"
+  },
+  "homepage": "https://github.com/robertpatan/typeorm-truncate-all#readme",
+  "dependencies": {
+    "typeorm": "^0.3.12",
+    "user": "^0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
