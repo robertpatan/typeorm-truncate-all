@@ -1,1 +1,1 @@
-export { truncateAllTables } from "./truncate";
+export { truncateTables } from "./truncate";

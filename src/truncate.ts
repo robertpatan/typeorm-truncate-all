@@ -12,7 +12,7 @@ import { DataSource } from 'typeorm';
 //   `);
 // }
 
-export async function truncateTables(dataSource: DataSource) {
+export async function truncateTables(dataSource: DataSource): Promise<void> {
   const entities = dataSource.entityMetadatas;
   for (const entity of entities) {
     const repository = dataSource.getRepository(entity.name);
