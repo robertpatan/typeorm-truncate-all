@@ -15,17 +15,25 @@ The function can be easily integrated into a NestJS application by injecting the
 ## Example
 
 ```
-export class SeedService {
-    constructor(
-        private dataSource: DataSource,
-    ) {}
+import { DataSource } from 'typeorm';
+import { truncateTables } from 'typeorm-truncate-all';
 
-    async drop() {
-        try {
-            truncateTables(this.dataSource);
-        } catch (e) {
-            return new Error(`Encountered error dropping data:${e}`);
-        }
+export class SeedService {
+  constructor(private dataSource: DataSource) {}
+
+  async drop() {
+    try {
+      await truncateTables(this.dataSource, ['table_to_exclude'], {
+        onTableTruncated: (tableName: string) => {
+          console.log(`Table ${tableName} truncated successfully`);
+        },
+        onError: (tableName: string, error: Error) => {
+          console.error(`Error truncating table ${tableName}:`, error);
+        },
+      });
+    } catch (e) {
+      return new Error(`Encountered error dropping data: ${e}`);
     }
+  }
 }
 ```
